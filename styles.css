@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    overflow-x: hidden;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    animation: textPop 1s ease forwards;
+}
+
+.hero h1 span {
+    color: #ffeb3b;
+}
+
+@keyframes textPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    min-height: 30px; /* space for typing effect */
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    background: #fff;
+    color: #333;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-top: 1.5rem;
+}
+
+.btn:hover {
+    background: #ffeb3b;
+    transform: scale(1.05);
+}
+
+/* Floating emojis */
+.emoji-container span {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.emoji-container span:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.emoji-container span:nth-child(2) { top: 30%; left: 70%; animation-delay: 2s; }
+.emoji-container span:nth-child(3) { top: 50%; left: 40%; animation-delay: 4s; }
+.emoji-container span:nth-child(4) { top: 70%; left: 20%; animation-delay: 1s; }
+.emoji-container span:nth-child(5) { top: 85%; left: 80%; animation-delay: 3s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.content {
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4rem 2rem;
+    text-align: center;
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
